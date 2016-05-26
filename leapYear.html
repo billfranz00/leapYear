@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leap Years</title>
+	<style type="text/css">
+		* {
+			text-align: center;
+		}
+
+		h1 {
+			margin-top: 50px;
+			text-decoration: underline;
+		}
+
+		p {
+			margin-left: 10px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 id="h1"></h1>
+
+	<div id="leaps"></div>
+
+
+
+
+
+	<script type="text/javascript">
+		var year = Number(prompt('Enter a year'))
+			numYears = Number(prompt('List of Leap Years for __ years after ' + year))
+
+		document.getElementById('h1').innerHTML = "Upcoming Leap Years for " + numYears + " Years after " + year 
+		
+		for(i = 1; i <= numYears; i++) {
+			if(year % 4 !== 0) {
+				year += 1
+			}
+			else if(year % 400 === 0) {
+				yearLeap()
+				year += 1
+			}
+			else if(year % 100 === 0) {
+				year += 1
+			}
+			else {
+				yearLeap()
+				year += 1
+			}
+		}
+
+		function yearLeap() {
+			var p = document.createElement('p'),
+				pNum = document.createTextNode(year)
+
+			p.appendChild(pNum)
+			document.getElementById('leaps').appendChild(p)
+		}
+	</script>
+</body>
+</html>
