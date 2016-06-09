@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adding, Subtracting, Multiplying, etc from Digit List</title>
+</head>
+<body>
+
+
+
+
+
+<script type="text/javascript">
+	
+var digitList1 = [4],
+	digitList2 = [6, 9],
+	digitList3 = [5, 7, 9, 0]
+
+function digitListMath(num1, num2) {
+	var stringArray1 = num1.map(String),
+		stringArray2 = num2.map(String),
+		numString1 = stringArray1.join(""),
+		numString2 = stringArray2.join("")
+
+	console.log(stringArray1)
+
+	var	choice = true
+
+	while(choice) {
+		var choose = prompt('What kind of operation you want to do?').toLowerCase()
+
+		if(choose == "+" || choose == "add" || choose == "addition") {
+			var newNumber = Number(numString1) + Number(numString2),
+				newString = newNumber.toString(),
+				newArray = newString.split(""),
+				numArray = newArray.map(Number)
+			if(numArray[0].toString() === 'NaN') {
+				numArray[0] = '-'
+			}
+			return numArray
+		}
+		else if(choose == "-" || choose == "subtract" || choose == "subtraction") {
+			var newNumber = Number(numString1) - Number(numString2),
+				newString = newNumber.toString(),
+				newArray = newString.split(""),
+				numArray = newArray.map(Number)
+			console.log(newArray)
+			if(numArray[0].toString() === 'NaN') {
+				numArray[0] = '-'
+			}
+			return numArray
+		}
+		else if(choose == "/" || choose == "divide" || choose == "division") {
+			var newNumber = Number(numString1) / Number(numString2),
+				newString = newNumber.toString(),
+				newArray = newString.split(""),
+				numArray = newArray.map(Number)
+			if(numArray[0].toString() === 'NaN') {
+				numArray[0] = '-'
+			}
+			else if(numArray[1].toString() === 'NaN') {
+				numArray[1] = '.'
+			}
+			return numArray
+		}
+		else if(choose == "*" || choose == "multiply" || choose == "multiplication") {
+			var newNumber = Number(numString1) * Number(numString2),
+				newString = newNumber.toString(),
+				newArray = newString.split(""),
+				numArray = newArray.map(Number)
+			if(numArray[0].toString() === 'NaN') {
+				numArray[0] = '-'
+			}
+			return numArray
+		}
+		else {
+			alert('Pick the correct Math operator (+, -, /, or *')
+			choice === true
+		}
+	}
+	
+}
+
+console.log(digitListMath(digitList1, digitList2))
+
+</script>
+
+
+
+</body>
+</html>
