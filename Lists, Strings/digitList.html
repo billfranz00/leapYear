@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating List of Digits from Number</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+var numeroUno = 578,
+	numeroDos = 5769,
+	numeroTres = 8,
+	numeroQuatro = 42139857384572384352314
+
+function digitList(number) {
+	console.log(number)
+	if(number > Math.pow(10, 16)) {
+		alert('Number is too larger to create array')
+	}
+	else {
+		var stringNum = number.toString(),
+			numArray = stringNum.split("")
+		console.log(stringNum)
+		return numArray.map(Number)
+	}
+}
+
+console.log(digitList(numeroUno))
+console.log(digitList(numeroDos))
+console.log(digitList(numeroTres))
+console.log(digitList(numeroQuatro))
+</script>
+
+
+</body>
+</html>
