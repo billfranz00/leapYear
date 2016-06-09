@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+</head>
+<body>
+
+
+<form onSubmit="return checkForLastName();">
+  Please enter your last name.<br>
+  <input type="text" id="lastNameField">
+  <input type="submit" value="Submit Form">
+</form>
+
+<br>
+<br>
+<br>
+
+<form onSubmit="return checkForSelection('states');">
+  <select id="states">
+    <option value="" selected="selected">
+      SELECT A STATE</option>
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+    </select>&nbsp;&nbsp;
+  <input type="submit" value="Submit Form">
+</form>
+
+
+
+
+<script type="text/javascript">
+
+	function checkForLastName() {
+		if(document.getElementById("lastNameField").value.length === 0) {
+	     	alert("Please enter your last name");
+	     	document.getElementById("lastNameField").focus();
+	     	document.getElementById("lastNameField").style.background = "yellow";
+	     	return false;
+		}
+	}
+
+	function checkForSelection(selecID) {
+   		var target = document.getElementById(selecID);
+	   	if (target.selectedIndex === 0) {
+	     	alert("Please select a state.");
+	     	return false;
+	   	}
+ 	}
+
+ 	function foo1()
+ 	{
+ 		return {
+ 			bar: "hello"
+ 		};
+ 	}
+
+ 	function foo2() 
+ 	{
+ 		return 
+ 		{
+ 			bar: "Hello"
+ 		}
+ 	}
+</script>
+
+</body>
+</html>

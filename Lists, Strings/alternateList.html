@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Combined Alternated List</title>
+</head>
+<body>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+var Array1 = ['people', 1, 6],
+	Array2 = [4, 9, 'places'],
+	Array3 = [69, 57, 'loops', 'poops']
+
+function alternateList(array1, array2) {
+	var finalArray = [],
+		arrayLength = 0
+	if(array1.length > array2.length || array1.length === array2.length) {
+		arrayLength = array1.length
+	}
+	else {
+		arrayLength = array2.length
+	}
+	for(i = 0; i < arrayLength; i++) {
+		finalArray.push(array1[i])
+		finalArray.push(array2[i])
+	}
+	for(i = 0; i < finalArray.length; i++) {
+		if(finalArray[i] === undefined) {
+			finalArray.splice(i, 1)
+		}
+	}
+	return finalArray
+}
+
+console.log(alternateList(Array1, Array2))
+console.log(alternateList(Array1, Array3))
+
+</script>
+</body>
+</html>

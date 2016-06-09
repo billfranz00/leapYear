@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schedule Overlap</title>
+</head>
+<body>
+
+
+
+
+
+<script type="text/javascript">
+	
+//(day) -> [[8,10],[12, 15],[6, 7]]
+
+//[[8,10],[12, 15],[6, 7]] -> false
+//[[8,10],[12, 15],[7, 9]] -> true
+
+function schedule(today) {
+    var times = [];
+    for(i < 0; i < today.length; i++) {
+       times.push(today[i][1] - today[i][0]);
+    }
+    for(j < 0; j < today.length, j++) {
+        if((today[j][0] + times[j] > today[j][0]) || (today[j][0] + times[j] < today[j][0])) {
+            return true
+        }
+    }
+    return false
+}
+
+</script>
+</body>
+</html>

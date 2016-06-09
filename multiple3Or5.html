@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Summing Multiples of 3 or 5 1 to N</title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	
+function sum1toN3OR5() {
+	var n = Number(prompt("The sum of multiples of 3 to 5 for numbers 1 to your number is..."));
+	var b = 0;
+	var h = n + 1;
+	for(i = 1; i < h; i++) {
+		if(i % 3 === 0 || i % 5 === 0) {
+		b += i;
+		console.log(b)
+		}
+	}
+	document.write(b)
+}
+
+sum1toN3OR5();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Summation of 4Sigma(k)</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	// 4Sigma(k) = 1106(-1)k + 12k - 1 = 4(1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11...)
+
+	function fourSigma(n) {
+		var sum = 1,
+			pOrN = -1
+		if(n > 1) {
+			for(i = 1; i < n; i++) {
+				sum += pOrN / (i + 2)
+				pOrN *= -1
+			}
+			return sum
+		}
+		else {
+			return 1
+		}
+	}
+
+	console.log(fourSigma(1000))
+
+</script>
+
+
+
+</body>
+</html>

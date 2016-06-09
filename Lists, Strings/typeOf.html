@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Elements in List</title>
+	<style type="text/css">
+		* {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+
+
+
+
+<script type="text/javascript">
+	
+	var blob = [true, 5, 'hi', [7, 8, 'tito'], {range: 7, name: 'billy'}],
+		blob2 = [],
+		blob3 = [69, poop, "I'm the Man"],
+		poop
+
+
+
+	function eleList(array) {
+		if(array.length === 0) {
+			alert('Nothin in the array')
+			document.write('Nothin Bro' + '<br>')
+		}
+		else {
+			for(i = 0; i < array.length; i++) {
+				switch(typeof array[i]) {
+					case 'boolean':
+						document.write('boolean' + '<br>')
+						break
+					case 'number':
+						document.write('number' + '<br>')
+						break
+					case 'string':
+						document.write('string' + '<br>')
+						break
+					case 'undefined':
+						document.write('undefined' + '<br>')
+						break
+					case 'object':
+						document.write('object' + '<br>')
+						break
+					default:
+						document.write('Nothin there' + '<br>')
+				}
+			}
+		}
+	}
+
+	eleList(blob)
+	eleList(blob2)
+	eleList(blob3)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess The Number</title>
+
+	<style type="text/css">
+		* {
+			text-align: center;
+		}
+
+		h2 {
+			margin-top: 400px;
+		}
+	</style>
+</head>
+<body>
+
+
+	<h2>Tries</h2>
+
+	<p id="tries"></p>
+
+	<button id="button">Start the game</button>
+
+
+
+	<script type="text/javascript">
+		
+		var tries = document.getElementById('tries')
+		tries.innerHTML = 0
+
+		document.getElementById('button').addEventListener('click', guess)
+
+		function guess() {
+			var guesses = 0
+			tries.innerHTML = guesses
+
+			var answer = prompt("What's the number dude? (1 to 100)"),
+				theNumber = Math.floor((Math.random() * 100) + 1),
+				alreadyGuessed = [],
+				loop = true
+
+			console.log(theNumber)
+			console.log(answer)
+
+			while(loop) {
+				if(answer === null) {
+					return
+				}
+				for(i = 0; i < alreadyGuessed.length; i++) {
+					if(Number(answer) === alreadyGuessed[i]) {
+						alert('You already guessed that')
+						answer = prompt('Guess Again...')
+					}
+				}
+				if(Number(answer) === theNumber) {
+					alert("You got it!!!")
+					loop = false
+					return
+				}
+				else if(Number(answer) < theNumber) {
+					alert('Higher Bro')
+					alreadyGuessed.push(answer)
+					guesses += 1
+					tries.innerHTML = guesses
+					loop = true
+				}
+				else {	
+					alert('Lower Man...')
+					alreadyGuessed.push(answer)
+					guesses += 1
+					tries.innerHTML = guesses
+					loop = true
+				}
+				answer = prompt('guess again')
+			}
+		}
+
+	</script>
+
+
+</body>
+</html>

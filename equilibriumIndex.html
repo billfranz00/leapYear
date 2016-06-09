@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Finding the Equilibrium Index</title>
+</head>
+<body>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+function solution(A) {
+	//declare variables outside loops
+	var upSum;
+    var downSum0;
+    var answers = [];
+    //Loops through each number in array A
+    for(i=0; i < A.length; i++) {
+    	//set lower part and upper parts sums equal to 0 after every number
+    	upSum = 0;
+    	downSum = 0;
+    	//Sums lower part numbers
+        for(j=0; j < i; j++) {
+            upSum += A[j];
+        }
+        //sums upper part numbers
+        for(k=A.length - 1; k > i; k--) {
+            downSum += A[k];
+        }
+        //determines of lower part sum equals upper part sum and logs, writes, and pushes it
+        if(upSum === downSum) {
+            console.log(i)
+            document.write(i + " ");
+            answers.push(i);
+        }
+    }
+    //returns array of answers if there are equilibrium indexes
+    if(answers.length > 0) {
+    	return answers;
+    }
+    //if no equilibrium indexes, -1 is logged and returned
+    else {
+    	console.log(-1)
+    	return -1;
+    }
+}
+
+
+</script>
+</body>
+</html>

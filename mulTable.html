@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication Table</title>
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+
+//Makes a multiplication table up to the number of your choice
+
+var table = function() {
+	var number = Number(prompt('Make this ridiculous multiplication table up to number...'));
+	var dude = number + 1;
+	document.write('<table>')
+	// Row
+	for(i = 1; i < dude; i++) {
+		document.write('<tr>')
+		// Column
+		for(j = 1; j < dude; j++) {
+			document.write('<td>' + i * j + '</td>')
+		}
+		document.write('</tr>')
+	}
+	document.write('</table>')
+};
+
+table();
+
+var list1 = [5, 8, 96, 99, 3, 55, 100];
+
+function largeElement(list) {
+	var large = 0;
+	for(i = 0; i < list.length; i++) {
+		if(list[i] > large) {
+			large = list[i];
+		}
+	}
+	console.log(large);
+}
+
+largeElement(list1);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Finding Palindromes</title>
+</head>
+<body>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+function tacoCat(word) {
+	var reverseWord = word.split("").reverse().join("").toLowerCase()
+	if(word.toLowerCase() == reverseWord) {
+		console.log(reverseWord)
+		console.log("It's a Palindrome!!!")	
+	}
+	else {
+		console.log('Not a Palindrome')
+	}
+}
+
+tacoCat('horse')
+tacoCat('racecar')
+tacoCat('tacocat')
+tacoCat('yo face!!!')
+
+</script>
+
+
+
+</body>
+</html>

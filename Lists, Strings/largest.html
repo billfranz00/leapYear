@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Largest Element in a List</title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	var array = [10, 7, 11, 5, 2, 9],
+		array2 = [100, 69, 57, 102, 4, 26],
+		array3 = [-100000, 407, 500000, Math.pow(10,7), 45678],
+		array4 = [],
+		array5 = [35],
+		array6 = [true, false, 'hi', 54, 45, 'my name is bob'],
+		array7 = ['dude', 'bro']
+
+	function largest(array) {
+		if(array.length === 0) {
+			return "No Elements in List"
+		}
+		else if(array.length === 1) {
+			return array[0]
+		}
+		else {
+			var num = 0
+			for(i = 0; i < array.length; i++) {
+				if(typeof array[i] === 'string') {
+					if(array[i].length > num) {
+						num = array[i].length
+					}
+				}
+				else if(array[i] > num) {
+					num = array[i]
+				}
+			}
+			return num
+		}
+	}
+
+	console.log(largest(array))
+	console.log(largest(array2))
+	console.log(largest(array3))
+	console.log(largest(array4))
+	console.log(largest(array5))
+	console.log(largest(array6))
+	console.log(largest(array7))
+	
+</script>
+
+</body>
+</html>

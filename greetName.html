@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greeting with your name</title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	
+// var greetName = function(name) {
+// 	var greeting = prompt("What's your name?");
+// 	document.write("Hello " + greeting + " , my name is Billy.")
+// }
+
+var greetName = function(name) {
+	var greeting = prompt("What's your name?").toLowerCase();
+	if(greeting == "alice") {
+		document.write("Hello Alice, my name is Billy.")
+	}
+	else if(greeting == "bob") {
+		document.write("Hello Bob, my name is Billy.")
+	}
+	else {
+		document.write("That's a hell of a bad name bro beans.")
+	}
+}
+
+greetName();
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rotate List by k elements</title>
+</head>
+<body>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+var array1 = [7, 4, 97, 101011, 'x2f01'],
+	array2 = ['plowin', 'hangry', 69, 57, 'your face', 'is my face', 'faces', 4000, 'pizza'],
+	rotateK = function(array, k) {
+		var removedElements = array.slice(0, k)
+		array.splice(0, k)
+		for(i = 0; i < removedElements.length; i++) {
+			array.push(removedElements[i])
+		}
+		return array
+	}
+
+console.log(rotateK(array1, 2))
+console.log(rotateK(array2, 4))
+
+</script>
+
+
+</body>
+</html>
