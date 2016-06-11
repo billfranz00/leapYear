@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting Algorithms</title>
+</head>
+<body>
+
+
+
+
+
+
+<script type="text/javascript">
+	
+
+var array1 = [4, 7, 2, 9, 5],
+	array2 = [69, 57, 103, 8, 2005, 409, 320, 5000, 3]
+
+function selectionSort(array) {
+	var minIndex
+	for(i = 0; i < (array.length - 1); i++) {
+		minIndex = i
+		for(j = i + 1; j < array.length; j++) {
+			if(array[j] < array[minIndex]) {
+				minIndex = j
+			}
+		}
+		if(minIndex !== i) {
+			var b = array[i],
+				a = array[minIndex]
+			array[i] = a
+			array[minIndex] = b
+		}
+	}
+	return array
+}
+
+console.log(selectionSort(array1))
+console.log(selectionSort(array2))
+
+</script>
+
+
+
+</body>
+</html>
