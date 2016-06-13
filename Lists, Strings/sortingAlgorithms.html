@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
 	
-
+// Selection Sorting
 var array1 = [4, 7, 2, 9, 5],
 	array2 = [69, 57, 103, 8, 2005, 409, 320, 5000, 3]
 
@@ -38,6 +38,69 @@ function selectionSort(array) {
 console.log(selectionSort(array1))
 console.log(selectionSort(array2))
 
+// Insertion Sorting
+
+// array1 = [4, 7, 2, 9, 5]
+// array2 = [69, 57, 103, 8, 2005, 409, 320, 5000, 3]
+
+function insertionSort(array) {
+	for(i = 1; i < array.length; i++) {
+		var x = array[i],
+			j = i - 1
+		while(j >= 0 && array[j] > x) {
+			array[j + 1] = array[j]
+			j = j - 1
+		}
+		array[j + 1] = x
+	}
+	return array
+}
+
+console.log(insertionSort(array1))
+console.log(insertionSort(array2))
+
+// Merge Sorting
+
+// array1 = [4, 7, 2, 9, 5]
+// array2 = [69, 57, 103, 8, 2005, 409, 320, 5000, 3]
+
+function mergeSort(array) {
+	if(array.length <= 1) {
+		return array
+	}
+
+	var middleItem = Math.floor(array.length / 2),
+		arrayLeft = array.slice(0, middleItem),
+		arrayRight = array.slice(middleItem)
+
+	return merge(mergeSort(arrayLeft), mergeSort(arrayRight))
+
+}
+
+function merge(arrayLeft, arrayRight) {
+	var finalArray = []
+
+	while(arrayLeft.length && arrayRight.length) {
+		if(arrayLeft[0] <= arrayRight[0]) {
+			finalArray.push(arrayLeft.shift())
+		}
+		else {
+			finalArray.push(arrayRight.shift())
+		}
+	}
+
+	while(arrayLeft.length) {
+		finalArray.push(arrayLeft.shift())
+	}
+	while(arrayRight.length) {
+		finalArray.push(arrayRight.shift())
+	}
+
+	return finalArray
+}
+
+console.log(mergeSort(array1))
+console.log(mergeSort(array2))
 </script>
 
 
