@@ -101,6 +101,58 @@ function merge(arrayLeft, arrayRight) {
 
 console.log(mergeSort(array1))
 console.log(mergeSort(array2))
+
+// Quick Sorting
+
+// array1 = [4, 7, 2, 9, 5]
+// array2 = [69, 57, 103, 8, 2005, 409, 320, 5000, 3]
+
+function swap(array, index1, index2) {
+	var temp = array[index1]
+	array[index1] = array[index2]
+	array[index2] = temp
+}
+
+function partition(array, left, right) {
+	var pivot = array[Math.floor((right + left) / 2)],
+		i = left,
+		j = right
+
+	while(i <= j) {
+		while(array[i] < pivot) {
+			i++
+		}
+		while(array[j] > pivot) {
+			j--
+		}
+		if(i <= j) {
+			swap(array, i, j)
+			i++
+			j--
+		}
+	}
+	return i
+}
+
+function quickSort(array, left, right) {
+	var index
+
+	if(array.length > 1) {
+		index = partition(array, left, right)
+		if(left < index - 1) {
+			quickSort(array, left, index - 1)
+		}
+		if(right > index) {
+			quickSort(array, index, right)
+		}
+	}
+
+	return array
+}
+
+// quickSort(yourArray, first index (0), last index (yourArray.length - 1)
+console.log(quickSort(array1, 0, array1.length - 1))
+console.log(quickSort(array2, 0, array2.length - 1))
 </script>
 
 
